@@ -1,0 +1,46 @@
+﻿@using MVC5.ViewModels.TeamVM
+@model List<TeamListItemVM>
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Team Control</h6>
+        <a href="/Admin/Team/Create" class="btn btn-outline-success">Create</a>
+    </div>
+    
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>ImgUrl</th>
+                        <th colspan="2">Action</th>
+                        
+
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    @foreach(var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Name</td>
+                            <td>@item.Description</td>
+                            <td>
+                                <img src="@item.ImgUrl" width="200" height="150">
+                               
+                            </td>
+                            <td class="text-center"><a class="btn btn-outline-info" asp-action="Update" aso-route-id="@item.Id">Update</a></td>
+                            <td class="text-center"><a class="btn btn-outline-danger" asp-action="Delete" aso-route-id="@item.Id">Delete</a></td>
+                        </tr>
+                    }
+                    
+                    
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+               
