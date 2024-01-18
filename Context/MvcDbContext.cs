@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using MVC5.Models;
 
 namespace MVC5.Context
@@ -10,5 +11,6 @@ namespace MVC5.Context
         {
         }
         public DbSet<Team> Teams { get; set; }
+       
     }
 }
