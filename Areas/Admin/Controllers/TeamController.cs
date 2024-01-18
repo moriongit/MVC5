@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.DataAnnotations;
 using Microsoft.EntityFrameworkCore;
 using MVC5.Context;
 using MVC5.Models;
@@ -51,10 +52,62 @@ namespace MVC5.Areas.Admin.Controllers
             };
             await _mvcDbContext.Teams.AddAsync(team);
             await _mvcDbContext.SaveChangesAsync();
-            return View(vm);
+            return RedirectToAction("Index");
 
             
          }
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null)
+            {
+                return BadRequest();
+            }
+            var data = await _mvcDbContext.Teams.FindAsync(id);
+            if (data == null)
+            {
+                return NotFound();
+            }
+             _mvcDbContext.Teams.Remove(data);
+            await _mvcDbContext.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+        public async Task<IActionResult> Update(int id)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+            if (id == null)
+            {
+                return BadRequest();
+            }
+            var data = await _mvcDbContext.Teams.FindAsync(id);
+            if (data == null)
+            {
+                return NotFound();
+            }
+            return View(new TeamUpdateVM
+            {
+                Name = data.Name,
+                ImgUrl = data.ImgUrl,
+                Description = data.Description,
+            });
 
-    } 
+        }
+        [HttpPost]
+
+        public async Task<IActionResult> Update(TeamUpdateVM vm, int id)
+        {
+            var data = await _mvcDbContext.Teams.FindAsync(id);
+            data.Name = vm.Name;
+            data.ImgUrl = vm.ImgUrl;
+            data.Description = vm.Description;
+
+            await _mvcDbContext.SaveChangesAsync();
+
+            return RedirectToAction(nameof(Index));
+        }
+            
+    }
+    
 }
