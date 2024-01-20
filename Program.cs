@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using MVC5.Context;
+using MVC5.Models;
 using System;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,7 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<MvcDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("MsSql")));
-
+builder.Services.AddIdentity<AppUser, IdentityRole>().AddDefaultTokenProviders().AddEntityFrameworkStores<MvcDbContext>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -24,7 +25,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
+app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllerRoute(
             name: "Admin",

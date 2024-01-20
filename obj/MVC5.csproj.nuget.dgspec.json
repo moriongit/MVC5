@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Birinci Novbe\\Desktop\\MVC5\\MVC5.csproj": {}
+    "C:\\Users\\mofu\\Desktop\\MVC5\\MVC5.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Birinci Novbe\\Desktop\\MVC5\\MVC5.csproj": {
+    "C:\\Users\\mofu\\Desktop\\MVC5\\MVC5.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Birinci Novbe\\Desktop\\MVC5\\MVC5.csproj",
+        "projectUniqueName": "C:\\Users\\mofu\\Desktop\\MVC5\\MVC5.csproj",
         "projectName": "MVC5",
-        "projectPath": "C:\\Users\\Birinci Novbe\\Desktop\\MVC5\\MVC5.csproj",
-        "packagesPath": "C:\\Users\\Birinci Novbe\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Birinci Novbe\\Desktop\\MVC5\\obj\\",
+        "projectPath": "C:\\Users\\mofu\\Desktop\\MVC5\\MVC5.csproj",
+        "packagesPath": "C:\\Users\\mofu\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mofu\\Desktop\\MVC5\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Birinci Novbe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\mofu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +26,8 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "C:\\Program Files\\dotnet\\sdk\\7.0.306\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -82,7 +88,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
         }
       }
     }

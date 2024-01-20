@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.DataAnnotations;
 using Microsoft.EntityFrameworkCore;
 using MVC5.Context;
@@ -9,6 +10,7 @@ using MVC5.ViewModels.TeamVM;
 namespace MVC5.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize]
     public class TeamController : Controller
     {
         MvcDbContext _mvcDbContext;
